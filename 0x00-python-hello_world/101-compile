@@ -1,0 +1,16 @@
+#!/bin/bash
+
+pyfile=${PYFILE:-}
+
+if [ -z "$pyfile" ]; then
+  echo "Error: PYFILE environment variable not set."
+  exit 1
+fi
+
+output_file="${pyfile}c"
+
+echo "Compiling $pyfile ..."
+python -m py_compile "$pyfile" && mv "__pycache__/${pyfile}c" "$output_file" && rm -rf "__pycache__"
+
+echo "Compilation complete."
+
