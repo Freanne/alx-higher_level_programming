@@ -3,9 +3,9 @@
 
 
 class Rectangle:
-    """ class Rectangle """
+    """ classs Rectangle """
     def __init__(self, width=0, height=0):
-        """ Initialization of width and height """
+        """ Initialization a class """
         self.width = width
         self.height = height
 
@@ -43,4 +43,24 @@ class Rectangle:
 
     def perimeter(self):
         """ perimeter """
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """ Return a string """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rect_str = ""
+        for _ in range(self.__height):
+            rect_str += "#" * self.__width
+            rect_str += "\n"
+        return rect_str[:-1]
+
+    def __repr__(self):
+        """ return a representation in string"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """ delete rectangle """
+        print("Bye rectangle...")
