@@ -4,12 +4,10 @@ import sys
 
 def is_safe(board, row, col):
     """Check if it is safe to place a queen at board[row][col]"""
-    # Check the left side of the current row
+
     for i in range(col):
         if board[row][i] == 1:
             return False
-
-    # Check the upper diagonal on the left side
     i = row
     j = col
     while i >= 0 and j >= 0:
@@ -54,6 +52,7 @@ def print_solutions(solutions):
     """Print the solutions in the desired format"""
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     # Read the value of N from the command-line argument

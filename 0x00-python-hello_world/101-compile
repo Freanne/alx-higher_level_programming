@@ -10,7 +10,7 @@ fi
 output_file="${pyfile}c"
 
 echo "Compiling $pyfile ..."
-python -m py_compile "$pyfile" && mv "__pycache__/${pyfile}c" "$output_file" && rm -rf "__pycache__"
+python3 -m py_compile "$pyfile" && mv "${pyfile}c" "$output_file"
 
 echo "Compilation complete."
 
