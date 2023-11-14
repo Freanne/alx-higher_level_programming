@@ -1,3 +1,4 @@
+#!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
     // Check if w or h is not a positive integer

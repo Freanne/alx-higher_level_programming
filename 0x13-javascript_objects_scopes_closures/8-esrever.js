@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.esrever = function (list) {
   // Clone the original list to avoid modifying it
   const reversedList = [...list];
