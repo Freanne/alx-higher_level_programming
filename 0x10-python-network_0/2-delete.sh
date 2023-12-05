@@ -2,4 +2,4 @@
 
 # Check if the number of arguments is correct
 
-curl -X DELETE "$1"
+curl -X DELETE -s "$1"
