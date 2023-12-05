@@ -1,6 +1,3 @@
 #!/bin/bash
-# Get the URL from the command line argument
-url=$1
-
-# Use curl to send a GET request with the specified header and display the body of the response
-curl -s -H "X-School-User-Id: 98" "$url"
+# Bash script that takes in a URL as an argument, sends a GET request to the URL, and displays the body of the response
+curl -X GET "$1" -s -H 'X-School-User-Id: 98'
