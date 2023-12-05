@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-import requests
-import sys
+"""Search API"""
 
-if len(sys.argv) == 1:
-    q = ""
-else:
-    q = sys.argv[1]
+if __name__ == "__main__":
+    import requests
+    import sys
 
-url = 'http://0.0.0.0:5000/search_user'
-data = {'q': q}
-
-try:
-    response = requests.post(url, data=data)
-    json_data = response.json()
-
-    if json_data:
-        print("[{}] {}".format(json_data.get('id'), json_data.get('name')))
+    url = 'http://0.0.0.0:5000/search_user'
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
     else:
-        print("No result")
+        letter = ""
 
-except ValueError:
-    print("Not a valid JSON")
+    r = requests.post(url, data={'q': letter})
+
+    try:
+        dict_t = r.json()
+        if dict_t == {}:
+            print('No result')
+        else:
+            print("[{}] {}".format(dict_t.get('id'), dict_t.get('name')))
+    except ValueError:
+        print("Not a valid JSON")
